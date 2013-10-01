@@ -26,7 +26,7 @@ module Hinch
       yield @config
     end
 
-    def connect
+    def start
       @client.connect
       @client.auth(config.password)
       @client.send(Jabber::Presence.new.set_type(:available))
@@ -42,7 +42,12 @@ module Hinch
         end
       end
       @muc.join(config.room + '/' + config.nick)
-      self
+
+      warn "running"
+      loop do
+        sleep 1
+#        respond 'hello'
+      end
     end
 
     def process(from, command)
@@ -58,14 +63,6 @@ module Hinch
 
     def respond(msg)
       muc.send Jabber::Message.new(muc.room, msg)
-    end
-
-    def run
-      warn "running"
-      loop do
-        sleep 1
-#        respond 'hello'
-      end
     end
   end
 end

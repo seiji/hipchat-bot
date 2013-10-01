@@ -1,7 +1,7 @@
 hipchat-bot
 ===========
 
-this is hipchat bot test.
+this is hipchat bot sample.
 
 ### Usage
 ```ruby
@@ -14,6 +14,6 @@ bot = Hinch::Bot.new do
   end
 end
 
-bot.connect.run
+bot.start
 ```
 
