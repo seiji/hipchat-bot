@@ -3,11 +3,8 @@ hipchat-bot
 
 this is hipchat bot test.
 
-** Usage
-
+### Usage
 ```ruby
-```
-
 bot = Hinch::Bot.new do
   configure do |c|
     c.jid      = 'your jid'
@@ -18,5 +15,5 @@ bot = Hinch::Bot.new do
 end
 
 bot.connect.run
-
+```
 
